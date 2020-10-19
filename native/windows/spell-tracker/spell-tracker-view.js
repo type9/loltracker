@@ -42,8 +42,8 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     // -- Private --
     _bindButtonEvents(){ //binds buttons to set the time they were used
-      for(sum = 1; sum<= 5; x++){
-        for(spell = 1; spell<= 2; x++){
+      for(sum = 1; sum<= 5; sum++){
+        for(spell = 1; spell<= 2; spell++){
           document.getElementById("sum" + sum + "-spell" + spell).addEventListener("click", this._setCooldown(sum, spell));
         }
       }
@@ -51,8 +51,8 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     _updateTimers(){ //updates timer elements once a second
       setInterval(() => {
-        for(sum = 1; sum <= 5; x++){
-          for(spell = 1; spell <= 2; x++){
+        for(sum = 1; sum <= 5; sum++){
+          for(spell = 1; spell <= 2; spell++){
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
             let timeSince = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell]);
 
