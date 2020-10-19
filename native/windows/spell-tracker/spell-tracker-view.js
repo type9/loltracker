@@ -82,11 +82,14 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         let added = false;
         let roleText = "";
         for(let spell = 1; spell <= 2; spell++){
+          let timeUp = this._calcTimeUp(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
+          if(!timeUp){
+            continue;
+          }
           if(added === false){
             roleText = this._roleMap(sum) + " ";
             added = true;
           }
-          let timeUp = this._calcTimeUp(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
           let ability = this.abilities["sum" + sum]["spell" + spell];
           let abilityText = `${ability}:${timeUp} `;
           roleText = roleText + abilityText;
