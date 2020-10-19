@@ -110,7 +110,7 @@ define([
         }
       });
 
-      hotkeysService.setCopyHotkey(async (result) => {
+      hotkeysService.setCopyHotkey(async () => {
         if (result.name === "copy_tracker_text") {
           window.ow_eventBus.trigger("copy_tracker_text", null);
         }
