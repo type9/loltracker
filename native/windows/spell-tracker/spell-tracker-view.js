@@ -64,6 +64,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     // -- Public --
     copyText(){
+      console.log("copying text...")
       const textarea = document.createElement("textarea");
       textarea.value = "this._getTrackerText()";
       textarea.setAttribute("readonly", "");
