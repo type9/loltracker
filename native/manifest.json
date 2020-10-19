@@ -36,9 +36,9 @@
     ],
     "hotkeys": {
       "sample_app_showhide": {
-        "title": "Show/Hide Trackers",
-        "action-type": "hold",
-        "default": "Tab"
+        "title": "Show/Hide In-Game Window",
+        "action-type": "toggle",
+        "default": "Ctrl+F"
       }
     },
     "game_events": [5426],
@@ -68,11 +68,33 @@
         },
         "desktop_only": true
       },
+      "in_game": {
+        "file": "windows/in-game/in-game.html",
+        "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "sample_app_showhide",
+        "transparent": true,
+        "resizable": true,
+        "size": {
+          "width": 1212,
+          "height": 699
+        },
+        "min_size": {
+          "width": 1212,
+          "height": 699
+        },
+        "max_size": {
+          "width": 1212,
+          "height": 699
+        }
+      },
       "spell-tracker": {
         "file": "windows/spell-tracker/spell-tracker.html",
         "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "sample_app_showhide",
         "transparent": true,
-        "resizable": false,
+        "resizable": true,
         "size": {
           "width": 1212,
           "height": 699
