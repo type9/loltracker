@@ -37,8 +37,10 @@
     "hotkeys": {
       "trackers_show": {
         "title": "Show Trackers",
-        "action-type": "hold",
-        "default": "Tab"
+        "action-type": "custom",
+        "passthrough": true,
+        "default": "Tab",
+        "hold": true
       }
     },
     "game_events": [5426],
