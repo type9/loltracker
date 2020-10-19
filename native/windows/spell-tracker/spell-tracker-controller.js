@@ -9,7 +9,7 @@ define([
   class SpellTrackerController {
 
     constructor() {
-      this.SpellTrackerView = new SpellTrackerView();
+      this.spellTrackerView = new SpellTrackerView();
 
       // this._gameEventHandler = this._gameEventHandler.bind(this);
       // this._infoUpdateHandler = this._infoUpdateHandler.bind(this);
@@ -30,7 +30,7 @@ define([
 
     async _updateHotkey() {
       const hotkey = await HotkeysService.getToggleHotkey();
-      this.inGameView.updateHotkey(hotkey);
+      this.spellTrackerView.updateHotkey(hotkey);
     }
 
     // _eventListener(eventName, data) {
@@ -64,7 +64,6 @@ define([
     //   this.inGameView.logInfoUpdate(JSON.stringify(infoUpdate), false);
     // }
   }
-
 
   return SpellTrackerController;
 });

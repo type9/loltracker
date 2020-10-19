@@ -33,7 +33,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
       }
 
       this._bindButtonEvents();
-      tick = this._updateTimers;
+      this._updateTimers();
     }
 
     // -- Public --
@@ -50,7 +50,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
     }
 
     _updateTimers(){ //updates timer elements once a second
-      return setInterval(() => {
+      let interval = setInterval(() => {
         for(sum = 1; sum <= 5; x++){
           for(spell = 1; spell <= 2; x++){
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
