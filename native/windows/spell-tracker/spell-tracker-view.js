@@ -63,11 +63,14 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     // -- Public --
     copyTextHandler(){
-      navigator.clipboard.writeText(this._getTrackerText).then(function() {
-        return;
-      }, function() {
-        console.log("Copy failed");
-      });
+      const textarea = document.createElement("textarea");
+      textarea.value = this._getTrackerText;
+      textarea.setAttribute("readonly", "");
+      textarea.style = { position: "absolute", left: "-9999px" };
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
     }
 
     // -- Private --
