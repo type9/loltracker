@@ -103,13 +103,14 @@ define([
      */
     static _registerHotkeys() {
       hotkeysService.setHoldHotkey(async (result) => {
-        // const state1 = await WindowsService.getWindowState(WindowNames.SPELL_TRACKER);
         if (result.state === "down") {
           WindowsService.restore(WindowNames.SPELL_TRACKER);
         } else if (result.state === "up") {
           WindowsService.minimize(WindowNames.SPELL_TRACKER);
         }
+      });
 
+      hotkeysService.setCopyHotkey(async (result) => {
         if (result.name === "copy_tracker_text") {
           window.ow_eventBus.trigger("copy_tracker_text", null);
         }
