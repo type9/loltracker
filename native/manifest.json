@@ -2,7 +2,7 @@
   "manifest_version": 1,
   "type": "WebApp",
   "meta": {
-    "name": "Sample App",
+    "name": "LoL Tracker",
     "version": "1.1.0",
     "minimum-overwolf-version": "0.120.0",
     "author": "Overwolf",
@@ -10,7 +10,7 @@
     "icon_gray": "IconMouseNormal.png",
     "launcher_icon": "desktop-icon.ico",
     "window_icon": "TaskbarIcon.png",
-    "description": "Sample app for new developers"
+    "description": "League of Legends Event Tracking Event Tracking"
   },
   "permissions": [
     "Hotkeys",
