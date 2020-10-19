@@ -56,7 +56,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
             let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
             if(timeLeft){
-              timer.innerHTML = time_Left;
+              timer.innerHTML = timeLeft;
             } else{
               timer.innerHTML = "Ready";
             }
@@ -86,14 +86,14 @@ define(["../SampleAppView.js"], function(SampleAppView) {
       if(useTime){
         let milli = cooldownLength - (Date.now() - useTime);
         if(milli <= 0){
-          return False;
+          return false;
         }
         let min = Math.floor((milli % (1000 * 60 * 60)) / (1000 * 60));
         let sec = Math.floor((milli % (1000 * 60)) / 1000);
         
         return min + ":" + sec;
       } else {
-        return False;
+        return false;
       }
     }
 
