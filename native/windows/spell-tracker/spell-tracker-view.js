@@ -10,6 +10,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
       this._updateTimers = this._updateTimers.bind(this);
       this._getTrackerText = this._getTrackerText.bind(this);
       this._roleMap = this._roleMap.bind(this);
+      this.copyText = this.copyText.bind(this);
 
       this.cooldowns ={
         sum1: {
@@ -62,7 +63,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
     }
 
     // -- Public --
-    copyTextHandler(){
+    copyText(){
       const textarea = document.createElement("textarea");
       textarea.value = this._getTrackerText;
       textarea.setAttribute("readonly", "");

@@ -37,10 +37,14 @@ define([
     _eventListener(eventName, data) {
       switch (eventName) {
         case 'copy_tracker_text': {
-          this._copyTextEventHandler();
+          this._copyTextEventHandler(event);
           break;
         }
       }
+    }
+
+    _copyTextEventHandler(event){
+      this.spellTrackerView.copyText();
     }
 
     // Logs events
