@@ -93,8 +93,6 @@
       "spell-tracker": {
         "file": "windows/spell-tracker/spell-tracker.html",
         "in_game_only": true,
-        "focus_game_takeover": "ReleaseOnHidden",
-        "focus_game_takeover_release_hotkey": "trackers_show",
         "transparent": true,
         "resizable": false,
         "size": {
