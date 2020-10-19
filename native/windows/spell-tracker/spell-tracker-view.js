@@ -3,11 +3,11 @@ define(["../SampleAppView.js"], function(SampleAppView) {
     constructor() {
       super();
       this._hotkey = document.getElementById("hotkey");
-      this._setCooldown = _setCooldown.bind(this);
-      this._getCooldownLength = _getCooldownLength.bind(this);
-      this._calcSecMinLeft = _calcSecMinLeft.bind(this);
-      this._bindButtonEvents = _bindButtonEvents.bind(this);
-      this._updateTimers = _updateTimers.bind(this);
+      this._setCooldown = this._setCooldown.bind(this);
+      this._getCooldownLength = this._getCooldownLength.bind(this);
+      this._calcSecMinLeft = this._calcSecMinLeft.bind(this);
+      this._bindButtonEvents = this._bindButtonEvents.bind(this);
+      this._updateTimers = this._updateTimers.bind(this);
 
       this.cooldowns ={
         sum1: {
@@ -30,7 +30,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
           spell1: null,
           spell2: null
         },
-      }
+      };
 
       this._bindButtonEvents();
       this._updateTimers();
@@ -42,8 +42,8 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     // -- Private --
     _bindButtonEvents(){ //binds buttons to set the time they were used
-      for(sum = 1; sum <= 5; sum++){
-        for(spell = 1; spell <= 2; spell++){
+      for(let sum = 1; sum <= 5; sum++){
+        for(let spell = 1; spell <= 2; spell++){
           document.getElementById("sum" + sum + "-spell" + spell).addEventListener("click", this._setCooldown(sum, spell));
         }
       }
@@ -51,8 +51,8 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     _updateTimers(){ //updates timer elements once a second
       setInterval(() => {
-        for(sum = 1; sum <= 5; sum++){
-          for(spell = 1; spell <= 2; spell++){
+        for(let sum = 1; sum <= 5; sum++){
+          for(let spell = 1; spell <= 2; spell++){
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
             let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
             if(timeLeft){
@@ -74,8 +74,10 @@ define(["../SampleAppView.js"], function(SampleAppView) {
       switch(spell){
         case 1: //flash 30s
           cooldownLength = 300000;
+          break;
         case 2: //teleport 45s TODO: Make cooldown function of player level (it becomes shorter with higher level)
           cooldownLength = 450000;
+          break;
       }
       return cooldownLength;
     }
