@@ -8,82 +8,81 @@
     <link rel="stylesheet" href="../../css/modal.css" />
     <title>Summoner Spell Tracker</title>
   </head>
-  <body class="in-game">
+  <body class="spell-tracker">
     <!-- -------------------------------- Header ------------------------------- -->
 
     <!-- --------------------------------- Main -------------------------------- -->
     <main>
       <div id="spells-container">
         <div id="events" class="spell-column">
-          <div class="summoner-row">
-            <div class="spell-row">
-              <div id="sum1-spell1" class="spell-button">
-                <img class="spell-icon" src="../../img/spells/flash.png" />
-                <div id="sum1-spell1-timer" class="spell-timer">
-                  <p id="sum1-spell1-timer">13:23</p>
-                </div>
-              </div>
-              <div id="sum1-spell2" class="spell-button">
-                <img class="spell-icon" src="../../img/spells/teleport.png" />
-                <div id="sum1-spell2-timer" class="spell-timer">
-                  <p id="sum1-spell2-timer">10:45</p>
-                </div>
-              </div>
-            </div>
-          <div class="summoner-row">
           <div class="spell-row">
             <div id="sum1-spell1" class="spell-button">
               <img class="spell-icon" src="../../img/spells/flash.png" />
-              <div id="sum1-spell1-timer" class="spell-timer">
+              <div class="spell-timer">
                 <p id="sum1-spell1-timer">13:23</p>
               </div>
             </div>
             <div id="sum1-spell2" class="spell-button">
               <img class="spell-icon" src="../../img/spells/teleport.png" />
-              <div id="sum1-spell2-timer" class="spell-timer">
+              <div class="spell-timer">
                 <p id="sum1-spell2-timer">10:45</p>
               </div>
             </div>
           </div>
           <div class="spell-row">
-            <div id="sum1-spell1" class="spell-button">
+            <div id="sum2-spell1" class="spell-button">
               <img class="spell-icon" src="../../img/spells/flash.png" />
-              <div id="sum1-spell1-timer" class="spell-timer">
-                <p id="sum1-spell1-timer">13:23</p>
+              <div class="spell-timer">
+                <p id="sum2-spell1-timer">13:23</p>
               </div>
             </div>
-            <div id="sum1-spell2" class="spell-button">
+            <div id="sum2-spell2" class="spell-button">
               <img class="spell-icon" src="../../img/spells/teleport.png" />
-              <div id="sum1-spell2-timer" class="spell-timer">
-                <p id="sum1-spell2-timer">10:45</p>
+              <div class="spell-timer">
+                <p id="sum2-spell2-timer">10:45</p>
               </div>
             </div>
           </div>
           <div class="spell-row">
-            <div id="sum1-spell1" class="spell-button">
+            <div id="sum3-spell1" class="spell-button">
               <img class="spell-icon" src="../../img/spells/flash.png" />
-              <div id="sum1-spell1-timer" class="spell-timer">
-                <p id="sum1-spell1-timer">13:23</p>
+              <div class="spell-timer">
+                <p id="sum3-spell1-timer">13:23</p>
               </div>
             </div>
-            <div id="sum1-spell2" class="spell-button">
+            <div id="sum3-spell2" class="spell-button">
               <img class="spell-icon" src="../../img/spells/teleport.png" />
-              <div id="sum1-spell2-timer" class="spell-timer">
-                <p id="sum1-spell2-timer">10:45</p>
+              <div class="spell-timer">
+                <p id="sum3-spell2-timer">10:45</p>
               </div>
             </div>
           </div>
           <div class="spell-row">
-            <div id="sum1-spell1" class="spell-button">
+            <div id="sum4-spell1" class="spell-button">
               <img class="spell-icon" src="../../img/spells/flash.png" />
-              <div id="sum1-spell1-timer" class="spell-timer">
-                <p id="sum1-spell1-timer">13:23</p>
+              <div class="spell-timer">
+                <p id="sum4-spell1-timer">13:23</p>
               </div>
             </div>
-            <div id="sum1-spell2" class="spell-button">
+            <div id="sum4-spell2" class="spell-button">
               <img class="spell-icon" src="../../img/spells/teleport.png" />
-              <div id="sum1-spell2-timer" class="spell-timer">
-                <p id="sum1-spell2-timer">10:45</p>
+              <div class="spell-timer">
+                <p id="sum4-spell2-timer">10:45</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="spell-row">
+            <div id="sum5-spell1" class="spell-button">
+              <img class="spell-icon" src="../../img/spells/flash.png" />
+              <div class="spell-timer">
+                <p id="sum5-spell1-timer">13:23</p>
+              </div>
+            </div>
+            <div id="sum5-spell2" class="spell-button">
+              <img class="spell-icon" src="../../img/spells/teleport.png" />
+              <div class="spell-timer">
+                <p id="sum5-spell2-timer">10:45</p>
               </div>
             </div>
           </div>
@@ -111,5 +110,15 @@
         </span>
       </div>
     </div>
+    <script src="../../lib/require.js"></script>
+    <script>
+      require(["spell-tracker-controller"], function(SpellTrackerController) {
+        console.log(`[INIT] spell-tracker loaded`);
+        const spellTrackerController = new SpellTrackerController();
+        spellTrackerController.run();
+      }, function(error) {
+        console.log(`[INIT] failed to load spell-tracker module ${error}`);
+      });
+    </script>
   </body>
 </html>
