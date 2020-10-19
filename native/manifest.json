@@ -46,7 +46,7 @@
       "copy_tracker_text": {
         "title": "Converts tracking info to pastable text",
         "action-type": "custom",
-        "default": "Tab+C",
+        "default": "Ctrl+Alt+C",
         "passthrough": true
       }
     },
