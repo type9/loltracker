@@ -56,7 +56,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         for(let sum = 1; sum <= 5; sum++){
           for(let spell = 1; spell <= 2; spell++){
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
-            let icon = document.getElementById("sum" + sum + "-spell" + spell + "-icon");
+            // let icon = document.getElementById("sum" + sum + "-spell" + spell + "-icon");
             let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
             if(timeLeft){
               timer.innerHTML = timeLeft; // set timer number
