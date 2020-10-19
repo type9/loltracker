@@ -103,10 +103,10 @@ define([
      */
     static _registerHotkeys() {
       hotkeysService.setHoldHotkey(async (result) => {
-        const state1 = await WindowsService.getWindowState(WindowNames.SPELL_TRACKER);
-        if (state1 === "minimized" || state === "closed" && result.state === "down") {
+        // const state1 = await WindowsService.getWindowState(WindowNames.SPELL_TRACKER);
+        if (result.state === "down") {
           WindowsService.restore(WindowNames.SPELL_TRACKER);
-        } else if (state2 === "normal" || state === "maximized" && result.state === "up") {
+        } else if (result.state === "up") {
           WindowsService.minimize(WindowNames.SPELL_TRACKER);
         }
       });
