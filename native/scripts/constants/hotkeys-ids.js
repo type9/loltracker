@@ -1,3 +1,3 @@
 define({
-  HOLD: 'sample_app_showhide',
+  TOGGLE: 'sample_app_showhide',
 });

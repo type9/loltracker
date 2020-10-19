@@ -34,16 +34,16 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
     });
   }
 
-  function getHoldHotkey() {
+  function getToggleHotkey() {
     return new Promise((resolve, reject) => {
-      _getHotkey(HOTKEYS.HOLD, function (result) {
+      _getHotkey(HOTKEYS.TOGGLE, function (result) {
         resolve(result);
       });
     });
   }
 
-  function setHoldHotkey(action) {
-    _setHotkey(HOTKEYS.Hold,action);
+  function setToggleHotkey(action) {
+    _setHotkey(HOTKEYS.TOGGLE,action);
   }
 
   function addHotkeyChangeListener(listener) {
@@ -51,8 +51,8 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
   }
 
   return {
-    getHoldHotkey,
-    setHoldHotkey,
+    getToggleHotkey,
+    setToggleHotkey,
     addHotkeyChangeListener
   };
 });
