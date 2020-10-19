@@ -101,12 +101,12 @@ define([
      * @private
      */
     static _registerHotkeys() {
-      hotkeysService.setToggleHotkey(async () => {
-        const state = await WindowsService.getWindowState(WindowNames.IN_GAME);
+      hotkeysService.setHoldHotkey(async () => {
+        const state = await WindowsService.getWindowState(WindowNames.SPELL_TRACKER);
         if (state === "minimized" || state === "closed") {
-          WindowsService.restore(WindowNames.IN_GAME);
+          WindowsService.restore(WindowNames.SPELL_TRACKER);
         } else if (state === "normal" || state === "maximized") {
-          WindowsService.minimize(WindowNames.IN_GAME);
+          WindowsService.minimize(WindowNames.SPELL_TRACKER);
         }
       });
     }
