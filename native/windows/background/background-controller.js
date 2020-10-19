@@ -63,6 +63,7 @@ define([
         );
         // Open in-game window
         await WindowsService.restore(WindowNames.IN_GAME);
+        await WindowsService.restore(WindowNames.SPELL_TRACKER);
         // Close desktop window
         WindowsService.close(WindowNames.DESKTOP);
       } else {
@@ -90,6 +91,7 @@ define([
         );
 
         await WindowsService.restore(WindowNames.IN_GAME);
+        await WindowsService.restore(WindowNames.SPELL_TRACKER);
         WindowsService.minimize(WindowNames.IN_GAME);
       }
     }
