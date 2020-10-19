@@ -60,10 +60,10 @@ define(["../SampleAppView.js"], function(SampleAppView) {
             let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
             if(timeLeft){
               timer.innerHTML = timeLeft; // set timer number
-              icon.style.opacity = "0.3"; //set lower opacity on spell icon
+              // icon.style.opacity = "0.3"; //set lower opacity on spell icon
             } else{
               timer.innerHTML = "";
-              icon.style.opacity = "1"; //bring back to full opacity on spell icon
+              // icon.style.opacity = "1"; //bring back to full opacity on spell icon
             }
           }
         }
