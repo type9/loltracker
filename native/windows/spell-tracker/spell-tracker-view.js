@@ -5,8 +5,11 @@ define(["../SampleAppView.js"], function(SampleAppView) {
       this._hotkey = document.getElementById("hotkey");
       this._getCooldownLength = this._getCooldownLength.bind(this);
       this._calcSecMinLeft = this._calcSecMinLeft.bind(this);
+      this._calcTimeUp = this._calcTimeUp.bind(this);
       this._bindButtonEvents = this._bindButtonEvents.bind(this);
       this._updateTimers = this._updateTimers.bind(this);
+      this._getTrackerText = this._getTrackerText.bind(this);
+      this._roleMap = this._roleMap.bind(this);
 
       this.cooldowns ={
         sum1: {
@@ -31,15 +34,66 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         },
       };
 
+      this.abilities ={
+        sum1: {
+          spell1: "flash",
+          spell2: "tp"
+        },
+        sum2: {
+          spell1: "flash",
+          spell2: "tp"
+        },
+        sum3: {
+          spell1: "flash",
+          spell2: "tp"
+        },
+        sum4: {
+          spell1: "flash",
+          spell2: "tp"
+        },
+        sum5: {
+          spell1: "flash",
+          spell2: "tp"
+        },
+      };
+
       this._bindButtonEvents();
       this._updateTimers();
     }
 
     // -- Public --
-
-
+    copyTextHandler(){
+      navigator.clipboard.writeText(this._getTrackerText).then(function() {
+        return;
+      }, function() {
+        console.log("Copy failed");
+      });
+    }
 
     // -- Private --
+    _getTrackerText(){
+      let text = "";
+      for(let sum = 1; sum <= 5; sum++){
+        let added = false;
+        let roleText = "";
+        for(let spell = 1; spell <= 2; spell++){
+          if(added === false){
+            roleText = this._roleMap(sum) + " ";
+            added = true;
+          }
+          let timeUp = this._calcTimeUp(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
+          let ability = this.abilities["sum" + sum]["spell" + spell];
+          let abilityText = `${ability}:${timeUp} `;
+          roleText = roleText + abilityText;
+        }
+        if(added === true){
+          roleText = roleText + "| ";
+          text = text + roleText;
+        }
+      }
+      return text;
+    }
+
     _bindButtonEvents(){ //binds buttons to set the time they were used
       for(let sum = 1; sum <= 5; sum++){
         for(let spell = 1; spell <= 2; spell++){
@@ -102,6 +156,39 @@ define(["../SampleAppView.js"], function(SampleAppView) {
       }
     }
 
+    _calcTimeUp(useTime, cooldownLength){
+      if(useTime){
+        let milli = Date.now() + (cooldownLength - (Date.now() - useTime));
+        if(milli <= Date.now()){
+          return false;
+        }
+        let min = Math.floor((milli % (1000 * 60 * 60)) / (1000 * 60));
+        let sec = Math.floor((milli % (1000 * 60)) / 1000);
+
+        if(sec < 10){
+          sec = "0" + sec;
+        }
+
+        return min + ":" + sec;
+      } else {
+        return false;
+      }
+    }
+
+    _roleMap(sum){
+      switch(sum){
+        case 1:
+          return "TOP";
+        case 2:
+          return "JG";
+        case 3:
+          return "MID";
+        case 4:
+          return "AD";
+        case 5:
+          return "SUP";
+      }
+    }
     // _copyEventsLog() {
     //   this._copyLog(this._eventsLog);
     // }

@@ -18,7 +18,8 @@
     "Streaming",
     "Profile",
     "GameInfo",
-    "DesktopStreaming"
+    "DesktopStreaming",
+    "clipboardWrite"
   ],
   "data": {
     "game_targeting": {
@@ -45,7 +46,7 @@
       "copy_tracker_text": {
         "title": "Converts tracking info to pastable text",
         "action-type": "custom",
-        "default": "Tab+Ctrl+C",
+        "default": "Tab+C",
         "passthrough": true
       }
     },

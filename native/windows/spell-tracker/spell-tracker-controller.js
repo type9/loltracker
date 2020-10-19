@@ -13,7 +13,8 @@ define([
 
       // this._gameEventHandler = this._gameEventHandler.bind(this);
       // this._infoUpdateHandler = this._infoUpdateHandler.bind(this);
-      // this._eventListener = this._eventListener.bind(this);
+      this._copyTextEventHandler = this._copyTextHandler.bind(this);
+      this._eventListener = this._eventListener.bind(this);
       this._updateHotkey = this._updateHotkey.bind(this);
     }
 
@@ -33,18 +34,14 @@ define([
       this.spellTrackerView.updateHotkey(hotkey);
     }
 
-    // _eventListener(eventName, data) {
-    //   switch (eventName) {
-    //     case 'event': {
-    //       this._gameEventHandler(data);
-    //       break;
-    //     }
-    //     case 'info': {
-    //       this._infoUpdateHandler(data);
-    //       break;
-    //     }
-    //   }
-    // }
+    _eventListener(eventName, data) {
+      switch (eventName) {
+        case 'copy_tracker_text': {
+          this._copyTextEventHandler(data);
+          break;
+        }
+      }
+    }
 
     // Logs events
   //   _gameEventHandler(event) {

@@ -39,6 +39,18 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
     _setHotkey(action);
   }
 
+  function _setCopyHotkey(action) {
+    overwolf.settings.hotkeys.onPressed(action);
+  }
+
+  function _getCopyHotkey(){
+    return new Promise((resolve, reject) => {
+      _getHotkey(HOTKEYS.COPY, function (result) {
+        resolve(result);
+      });
+    });
+  }
+
   function addHotkeyChangeListener(listener) {
     overwolf.settings.OnHotKeyChanged.addListener(listener);
   }
