@@ -3,9 +3,9 @@
   "type": "WebApp",
   "meta": {
     "name": "LoL Tracker",
-    "version": "1.1.0",
+    "version": "0.0.1",
     "minimum-overwolf-version": "0.120.0",
-    "author": "Overwolf",
+    "author": "Type9",
     "icon": "IconMouseOver.png",
     "icon_gray": "IconMouseNormal.png",
     "launcher_icon": "desktop-icon.ico",
@@ -57,25 +57,6 @@
         "file": "windows/background/background.html",
         "background_optimization": false,
         "is_background_page": true
-      },
-      "desktop": {
-        "file": "windows/desktop/desktop.html",
-        "native_window": true,
-        "transparent": true,
-        "resizable": true,
-        "size": {
-          "width": 1212,
-          "height": 699
-        },
-        "min_size": {
-          "width": 1212,
-          "height": 699
-        },
-        "max_size": {
-          "width": 1212,
-          "height": 699
-        },
-        "desktop_only": true
       },
       "spell-tracker": {
         "file": "windows/spell-tracker/spell-tracker.html",
