@@ -102,11 +102,11 @@ define([
      */
     static _registerHotkeys() {
       hotkeysService.setHoldHotkey(async () => {
-        const state = await WindowsService.getWindowState(WindowNames.SPELL_TRACKER);
+        const state = await WindowsService.getWindowState(WindowNames.IN_GAME);
         if (state === "minimized" || state === "closed") {
-          WindowsService.restore(WindowNames.SPELL_TRACKER);
+          WindowsService.restore(WindowNames.IN_GAME);
         } else if (state === "normal" || state === "maximized") {
-          WindowsService.minimize(WindowNames.SPELL_TRACKER);
+          WindowsService.minimize(WindowNames.IN_GAME);
         }
       });
     }
