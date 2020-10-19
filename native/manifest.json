@@ -71,6 +71,8 @@
       "in_game": {
         "file": "windows/in-game/in-game.html",
         "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "trackers_show",
         "transparent": true,
         "resizable": true,
         "size": {
@@ -89,8 +91,10 @@
       "spell-tracker": {
         "file": "windows/spell-tracker/spell-tracker.html",
         "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "trackers_show",
         "transparent": true,
-        "resizable": true,
+        "resizable": false,
         "size": {
           "width": 1212,
           "height": 699
