@@ -66,7 +66,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
     copyText(){
       console.log("copying text...");
       const textarea = document.createElement("textarea");
-      textarea.value = "this._getTrackerText()";
+      textarea.value = this._getTrackerText();
       textarea.setAttribute("readonly", "");
       textarea.style = { position: "absolute", left: "-9999px" };
       document.body.appendChild(textarea);
