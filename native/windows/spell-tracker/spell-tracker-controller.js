@@ -22,7 +22,7 @@ define([
       // listen to events from the event bus from the main window,
       // the callback will be run in the context of the current window
       let mainWindow = overwolf.windows.getMainWindow();
-      mainWindow.ow_eventBus.addListener(this._copyTextEventHandler);
+      mainWindow.ow_eventBus.addListener(this._eventListener);
 
       // Update hotkey view and listen to changes:
       this._updateHotkey();
