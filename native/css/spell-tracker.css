@@ -5,6 +5,7 @@
 html {
   width:150px;
   height:auto;
+  user-select: none;
 }
 
 body {
@@ -22,7 +23,7 @@ h1 {
 }
 
 #spells-container {
-  background-color: #307c70;
+  background-color: #2c5c54;
   border-radius: 3px;
   padding: 0px 10px 10px 10px;
 }
@@ -44,6 +45,15 @@ h1 {
 .spell-icon{
   width:50px;
   height:50px;
+  -webkit-user-drag: none;
+
+  border: 2px solid #ffdd99;
+  border-radius: 0px;
+}
+
+.spell-icon:hover{
+  filter: brightness(50%);
+  transition-duration: 0.3;
 }
 
 .spell-timer{
