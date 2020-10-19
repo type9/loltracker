@@ -56,13 +56,14 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         for(let sum = 1; sum <= 5; sum++){
           for(let spell = 1; spell <= 2; spell++){
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
+            let icon = document.getElementById("sum" + sum + "-spell" + spell + "-icon");
             let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
             if(timeLeft){
               timer.innerHTML = timeLeft; // set timer number
-              document.getElementById("sum" + sum + "-spell" + spell).getElementsByClassName("spell-icon").style.opacity = "0.3"; //set lower opacity on spell icon
+              icon.style.opacity = "0.3"; //set lower opacity on spell icon
             } else{
               timer.innerHTML = "";
-              document.getElementById("sum" + sum + "-spell" + spell).getElementsByClassName("spell-icon").style.opacity = "1"; //bring back to full opacity on spell icon
+              icon.style.opacity = "1"; //bring back to full opacity on spell icon
             }
           }
         }
