@@ -31,7 +31,7 @@ define([
 
     async _updateHotkey() {
       const hotkey = await HotkeysService.getHoldHotkey();
-      this.spellTrackerView.updateHotkey(hotkey);
+      // this.spellTrackerView.updateHotkey(hotkey);
     }
 
     _eventListener(eventName, data) {
