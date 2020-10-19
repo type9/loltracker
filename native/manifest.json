@@ -87,6 +87,26 @@
           "width": 1212,
           "height": 699
         }
+      },
+      "spell-tracker": {
+        "file": "windows/tracker/spell-tracker",
+        "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "sample_app_showhide",
+        "transparent": true,
+        "resizable": true,
+        "size": {
+          "width": 1212,
+          "height": 699
+        },
+        "min_size": {
+          "width": 1212,
+          "height": 699
+        },
+        "max_size": {
+          "width": 1212,
+          "height": 699
+        }
       }
     },
     "protocol_override_domains": { "googlesyndication": "http" },
