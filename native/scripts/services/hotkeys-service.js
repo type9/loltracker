@@ -20,7 +20,6 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
 
   /**
    * set custom action for a hotkey id
-   * @param hotkeyId
    * @param action
    * @private
    */
@@ -37,7 +36,7 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
   }
 
   function setHoldHotkey(action) {
-    _setHotkey(HOTKEYS.HOLD,action);
+    _setHotkey(action);
   }
 
   function addHotkeyChangeListener(listener) {

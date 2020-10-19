@@ -93,6 +93,7 @@ define([
         await WindowsService.restore(WindowNames.IN_GAME);
         await WindowsService.restore(WindowNames.SPELL_TRACKER);
         WindowsService.minimize(WindowNames.IN_GAME);
+        WindowsService.minimize(WindowNames.SPELL_TRACKER);
       }
     }
 
@@ -101,11 +102,11 @@ define([
      * @private
      */
     static _registerHotkeys() {
-      hotkeysService.setHoldHotkey(async () => {
-        const state = await WindowsService.getWindowState(WindowNames.IN_GAME);
-        if (state === "minimized" || state === "closed") {
+      hotkeysService.setHoldHotkey(async (result) => {
+        const state = await WindowsService.getWindowState(WindowNames.SPELL_TRACKER);
+        if ((state === "minimized" || state === "closed") && result.state === "down") {
           WindowsService.restore(WindowNames.IN_GAME);
-        } else if (state === "normal" || state === "maximized") {
+        } else if (state === "normal" || state === "maximized" && result.state === "up") {
           WindowsService.minimize(WindowNames.IN_GAME);
         }
       });
