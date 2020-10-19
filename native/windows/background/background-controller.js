@@ -110,7 +110,7 @@ define([
         }
       });
 
-      hotkeysService.setCopyHotkey(async () => {
+      hotkeysService.setCopyHotkey(() => {
         window.ow_eventBus.trigger("copy_tracker_text", null);
       });
     }
