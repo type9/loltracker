@@ -3,7 +3,6 @@ define(["../SampleAppView.js"], function(SampleAppView) {
     constructor() {
       super();
       this._hotkey = document.getElementById("hotkey");
-      this._setCooldown = this._setCooldown.bind(this);
       this._getCooldownLength = this._getCooldownLength.bind(this);
       this._calcSecMinLeft = this._calcSecMinLeft.bind(this);
       this._bindButtonEvents = this._bindButtonEvents.bind(this);
@@ -44,7 +43,10 @@ define(["../SampleAppView.js"], function(SampleAppView) {
     _bindButtonEvents(){ //binds buttons to set the time they were used
       for(let sum = 1; sum <= 5; sum++){
         for(let spell = 1; spell <= 2; spell++){
-          document.getElementById("sum" + sum + "-spell" + spell).addEventListener("click", this._setCooldown(sum, spell));
+          document.getElementById("sum" + sum + "-spell" + spell).addEventListener("click", () => {
+            //sets the time used to the current time
+            this.cooldowns["sum" + sum]["spell" + spell] = Date.now();
+          });
         }
       }
     }
@@ -63,10 +65,6 @@ define(["../SampleAppView.js"], function(SampleAppView) {
           }
         }
       }, 1000);
-    }
-
-    _setCooldown(sum, spell){ //sets the time used to the current time
-      this.cooldowns["sum" + sum]["spell" + spell] = Date.now();
     }
 
     _getCooldownLength(spell){
@@ -90,7 +88,10 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         }
         let min = Math.floor((milli % (1000 * 60 * 60)) / (1000 * 60));
         let sec = Math.floor((milli % (1000 * 60)) / 1000);
-        
+
+        if(sec < 10){
+          sec ="0" + sec;
+        }
         return min + ":" + sec;
       } else {
         return false;
