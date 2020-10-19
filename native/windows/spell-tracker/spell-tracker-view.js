@@ -59,10 +59,10 @@ define(["../SampleAppView.js"], function(SampleAppView) {
             let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
             if(timeLeft){
               timer.innerHTML = timeLeft; // set timer number
-              document.getElementById("sum" + sum + "-spell" + spell).getElementsByClassName("spell-icon").style.opacity = 0.3; //set lower opacity on spell icon
+              document.getElementById("sum" + sum + "-spell" + spell).getElementsByClassName("spell-icon").style.opacity = "0.3"; //set lower opacity on spell icon
             } else{
               timer.innerHTML = "";
-              document.getElementById("sum" + sum + "-spell" + spell).getElementsByClassName("spell-icon").style.opacity = 1; //bring back to full opacity on spell icon
+              document.getElementById("sum" + sum + "-spell" + spell).getElementsByClassName("spell-icon").style.opacity = "1"; //bring back to full opacity on spell icon
             }
           }
         }
