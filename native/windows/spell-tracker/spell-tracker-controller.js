@@ -13,7 +13,7 @@ define([
 
       // this._gameEventHandler = this._gameEventHandler.bind(this);
       // this._infoUpdateHandler = this._infoUpdateHandler.bind(this);
-      this._copyTextEventHandler = this._copyTextHandler.bind(this);
+      this._copyTextEventHandler = this._copyTextEventHandler.bind(this);
       this._eventListener = this._eventListener.bind(this);
       this._updateHotkey = this._updateHotkey.bind(this);
     }
