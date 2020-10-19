@@ -29,7 +29,7 @@ define([
     }
 
     async _updateHotkey() {
-      const hotkey = await HotkeysService.getToggleHotkey();
+      const hotkey = await HotkeysService.getHoldHotkey();
       this.spellTrackerView.updateHotkey(hotkey);
     }
 

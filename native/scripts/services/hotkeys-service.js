@@ -24,14 +24,8 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
    * @param action
    * @private
    */
-  function _setHotkey(hotkeyId, action) {
-    overwolf.settings.registerHotKey(hotkeyId, function (result) {
-      if (result.status === 'success') {
-        action();
-      } else {
-        console.error(`[HOTKEYS SERVICE] failed to register hotkey ${hotkeyId}`);
-      }
-    });
+  function _setHotkey(action) {
+    overwolf.settings.hotkeys.onHold.addListener(action);
   }
 
   function getHoldHotkey() {
