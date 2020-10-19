@@ -10,7 +10,7 @@
     "icon_gray": "IconMouseNormal.png",
     "launcher_icon": "desktop-icon.ico",
     "window_icon": "TaskbarIcon.png",
-    "description": "League of Legends Event Tracking Event Tracking"
+    "description": "League of Legends In-game Tracking"
   },
   "permissions": [
     "Hotkeys",
@@ -44,7 +44,7 @@
         "hold": true
       },
       "copy_tracker_text": {
-        "title": "Converts tracking info to pastable text",
+        "title": "Converts Tracking Info To Text",
         "action-type": "custom",
         "default": "Ctrl+Shift+C",
         "passthrough": true
