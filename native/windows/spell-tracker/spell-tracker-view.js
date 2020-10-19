@@ -92,9 +92,9 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         let min = Math.floor((milli % (1000 * 60 * 60)) / (1000 * 60));
         let sec = Math.floor((milli % (1000 * 60)) / 1000);
 
-        if(sec < 10){
-          sec ="0" + sec;
-        }
+        // if(sec < 10){
+        //   sec = "0" + sec;
+        // }
         return min + ":" + sec;
       } else {
         return false;
