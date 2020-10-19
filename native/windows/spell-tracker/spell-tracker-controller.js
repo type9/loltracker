@@ -44,6 +44,7 @@ define([
     }
 
     _copyTextEventHandler(event){
+      console.log("copyText handler triggered")
       this.spellTrackerView.copyText();
     }
 

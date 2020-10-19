@@ -111,6 +111,7 @@ define([
       });
 
       hotkeysService.setCopyHotkey(() => {
+        console.log("copyText keyPress detected")
         window.ow_eventBus.trigger("copy_tracker_text", null);
       });
     }
