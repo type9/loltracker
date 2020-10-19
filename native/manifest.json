@@ -41,6 +41,12 @@
         "passthrough": true,
         "default": "Tab",
         "hold": true
+      },
+      "copy_tracker_text": {
+        "title": "Converts tracking info to pastable text",
+        "action-type": "custom",
+        "default": "Tab+Ctrl+C",
+        "passthrough": true
       }
     },
     "game_events": [5426],

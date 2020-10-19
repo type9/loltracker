@@ -62,7 +62,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
               timer.innerHTML = timeLeft; // set timer number
               icon.style.opacity = "0.3"; //set lower opacity on spell icon
             } else{
-              timer.innerHTML = "";
+              timer.innerHTML = " ";
               icon.style.opacity = "1"; //bring back to full opacity on spell icon
             }
           }
