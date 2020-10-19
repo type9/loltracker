@@ -56,14 +56,14 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         for(let sum = 1; sum <= 5; sum++){
           for(let spell = 1; spell <= 2; spell++){
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
-            // let icon = document.getElementById("sum" + sum + "-spell" + spell + "-icon");
+            let icon = document.getElementById("sum" + sum + "-spell" + spell + "-icon");
             let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
             if(timeLeft){
               timer.innerHTML = timeLeft; // set timer number
-              // icon.style.opacity = "0.3"; //set lower opacity on spell icon
+              icon.style.opacity = "0.3"; //set lower opacity on spell icon
             } else{
               timer.innerHTML = "";
-              // icon.style.opacity = "1"; //bring back to full opacity on spell icon
+              icon.style.opacity = "1"; //bring back to full opacity on spell icon
             }
           }
         }
@@ -92,9 +92,10 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         let min = Math.floor((milli % (1000 * 60 * 60)) / (1000 * 60));
         let sec = Math.floor((milli % (1000 * 60)) / 1000);
 
-        // if(sec < 10){
-        //   sec = "0" + sec;
-        // }
+        if(sec < 10){
+          sec = "0" + sec;
+        }
+
         return min + ":" + sec;
       } else {
         return false;
