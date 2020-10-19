@@ -42,8 +42,8 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     // -- Private --
     _bindButtonEvents(){ //binds buttons to set the time they were used
-      for(sum = 1; sum<= 5; sum++){
-        for(spell = 1; spell<= 2; spell++){
+      for(sum = 1; sum <= 5; sum++){
+        for(spell = 1; spell <= 2; spell++){
           document.getElementById("sum" + sum + "-spell" + spell).addEventListener("click", this._setCooldown(sum, spell));
         }
       }
@@ -54,15 +54,9 @@ define(["../SampleAppView.js"], function(SampleAppView) {
         for(sum = 1; sum <= 5; sum++){
           for(spell = 1; spell <= 2; spell++){
             let timer = document.getElementById("sum" + sum + "-spell" + spell + "-timer");
-            let timeSince = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell]);
-
-            if(timeSince){
-              let timeLeft = this._getCooldownLength(spell) - timeSince;
-              if(timeLeft > 0){
-                timer.innerHTML = time_Left;
-              } else{
-                timer.innerHTML = "Ready";
-              }
+            let timeLeft = this._calcSecMinLeft(this.cooldowns["sum" + sum]["spell" + spell], this._getCooldownLength(spell));
+            if(timeLeft){
+              timer.innerHTML = time_Left;
             } else{
               timer.innerHTML = "Ready";
             }
@@ -88,7 +82,7 @@ define(["../SampleAppView.js"], function(SampleAppView) {
 
     _calcSecMinLeft(useTime, cooldownLength){ //calculates time left from when used. returns false if time is 0, negative, or data incomplete
       if(useTime){
-        let milli = Date.now() - useTime;
+        let milli = cooldownLength - (Date.now() - useTime);
         if(milli <= 0){
           return False;
         }
