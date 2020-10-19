@@ -40,7 +40,7 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
   }
 
   function setCopyHotkey(action) {
-    overwolf.settings.hotkeys.onPressed.addHotkeyChangeListener(action);
+    overwolf.settings.hotkeys.onPressed.addListener(action);
   }
 
   function getCopyHotkey(){
